@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<title>NONZERO PLAYGROUND</title>
+  <meta name="description" content="All of your fucks are belong to me." />
+  <style type="text/css">
+
+    @import url("./normalize.css");
+
+    html {
+      background: black;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- source image for chromata -->
+  <img id="image" src="image.jpg">
+  <script src="chromata.min.js"></script>
+  <script language="javascript">
+
+    // Chromata Options
+    var options = {
+      colorMode: 'color',
+      compositeOperation: 'lighten',
+      iterationLimit: 0,
+      key: 'low',
+      lineWidth: 2,
+      lineMode: 'smooth',
+      origin: ['top'],
+      outputSize: 'original',
+      pathFinderCount: 30,
+      speed: 20,
+      turningAngle: Math.PI
+    };
+
+    var img = document.querySelector('#image')
+    var chromata = new Chromata(img, options);
+
+    // Start Chromata
+    chromata.start();
+
+    // Cilck anywhere in the html body to pause or resume rendering
+    document.querySelector('body').addEventListener('click', e => {
+        var count = chromata.toggle();
+        if(count) console.log('iterations: ' + count);
+    });
+
+  </script>
+</body>
+</html>

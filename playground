@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+PORT=8000
+
+printf "Running playground server at:\n"
+printf "http://localhost:$PORT\n\n"
+
+docker run -i -t \
+    --rm \
+    --name=nonzero_playground \
+    -v $(pwd):/usr/share/nginx/html:ro \
+    -p $PORT:80 \
+    nginx:alpine
