@@ -6,9 +6,9 @@ Nonzero playground is a set of visual tools for playing with canvas objects in t
 
 Even though all of the code is client-side, due to to the fact that images will be loaded via url, a simple web server will need to be run in order to load assets. For this we will use a lightweight nginx container loaded via docker.
 
-```
-[Docker Desktop](https://www.docker.com/get-started)
-```
+- [Git](https://git-scm.com/)
+- [Docker Desktop](https://www.docker.com/get-started)
+
 
 ## Instructions
 
